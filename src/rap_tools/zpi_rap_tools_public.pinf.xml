@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_PINF" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PINF>
+    <ATTRIBUTES>
+     <INTF_NAME>ZPI_RAP_TOOLS_PUBLIC</INTF_NAME>
+     <DESCRIPT>Öffentliche Paketschnittstelle für RAP Tools</DESCRIPT>
+    </ATTRIBUTES>
+    <ELEMENTS>
+     <SCOMELDTLN>
+      <INTF_NAME>ZPI_RAP_TOOLS_PUBLIC</INTF_NAME>
+      <ELEM_TYPE>CLAS</ELEM_TYPE>
+      <ELEM_KEY>ZCL_RAP_UTILITY</ELEM_KEY>
+     </SCOMELDTLN>
+     <SCOMELDTLN>
+      <INTF_NAME>ZPI_RAP_TOOLS_PUBLIC</INTF_NAME>
+      <ELEM_TYPE>CLAS</ELEM_TYPE>
+      <ELEM_KEY>ZCX_RAP_EXCEPTION</ELEM_KEY>
+     </SCOMELDTLN>
+     <SCOMELDTLN>
+      <INTF_NAME>ZPI_RAP_TOOLS_PUBLIC</INTF_NAME>
+      <ELEM_TYPE>INTF</ELEM_TYPE>
+      <ELEM_KEY>ZIF_RAP_UTILITY</ELEM_KEY>
+     </SCOMELDTLN>
+     <SCOMELDTLN>
+      <INTF_NAME>ZPI_RAP_TOOLS_PUBLIC</INTF_NAME>
+      <ELEM_TYPE>STOB</ELEM_TYPE>
+      <ELEM_KEY>ZI_DOMAINFIXEDVALUES</ELEM_KEY>
+     </SCOMELDTLN>
+     <SCOMELDTLN>
+      <INTF_NAME>ZPI_RAP_TOOLS_PUBLIC</INTF_NAME>
+      <ELEM_TYPE>STRU</ELEM_TYPE>
+      <ELEM_KEY>ZRAP_ADMIN_DATA</ELEM_KEY>
+     </SCOMELDTLN>
+    </ELEMENTS>
+   </PINF>
+  </asx:values>
+ </asx:abap>
+</abapGit>

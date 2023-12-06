@@ -1,0 +1,57 @@
+managed with additional save
+implementation in class zbp_i_demo_meterreadingupload unique;
+strict;
+
+define behavior for ZI_Demo_MeterReadingUpload alias Upload
+persistent table zdmo_mr_upload
+lock master
+authorization master ( global, instance )
+etag master LastChangedAtTimestamp
+
+{
+  create;
+  update;
+  delete;
+  field ( numbering : managed, readonly ) MeterReadingUploadUUID;
+  field ( readonly ) UploadStatusText, UploadStatusCriticality;
+  field ( mandatory : create ) SerialNumber, MeterReadingDate, MeterReadingResult, MeterReadingUnit;
+  field ( readonly : update ) SerialNumber, MeterReadingDate, MeterReadingResult, MeterReadingUnit;
+  field ( readonly : update ) FirstName, LastName, Street, HouseNumber, HouseNumberSupplement, PostCode, City;
+  determination IdentifyBusinessPartner on modify { create; update; }
+  determination IdentifyContractAccount on modify { create; update; }
+  determination IdentifyContract on modify { create; update; }
+  determination IdentifyConnectionObject on modify { create; update; }
+  determination IdentifyEquipment on modify { create; update; }
+  determination SetStatus on modify { create; update; }
+  action ( authorization : update ) ProcessMeterReading;
+
+  mapping for zdmo_mr_upload
+  {
+    MeterReadingUploadUUID = uuid;
+    MeterReadingDocumentId = mr_document_id;
+    ConnectionObject = connection_object;
+    Equipment = equipment;
+    SerialNumber = serial_number;
+    MeterReadingDate = mr_date;
+    MeterReadingResult = mr_result;
+    MeterReadingUnit = mr_unit;
+    MeterReadingSource = mr_source;
+    Contract = contract;
+    ContractAccount = contract_account;
+    BusinessPartner = business_partner;
+    FirstName = first_name;
+    LastName = last_name;
+    Street = street;
+    HouseNumber = house_number;
+    HouseNumberSupplement = house_number_supplement;
+    PostCode = post_code;
+    City = city;
+    UploadStatus = upload_status;
+    CreatedByUser = created_by_user;
+    CreatedAtTimestamp = created_at_timestamp;
+    LastChangedByUser = last_changed_by_user;
+    LastChangedAtTimestamp = last_changed_at_timestamp;
+    LocInstChangedByUser = loc_inst_changed_by_user;
+    LocInstChangedAtTimestamp = loc_inst_changed_at_timestamp;
+  }
+}

@@ -1,0 +1,34 @@
+managed with additional save
+implementation in class zbp_i_demo_meterreadingdocumen unique;
+strict;
+
+define behavior for ZI_Demo_MeterReadingDocuments alias Document
+persistent table zdmo_mr_docs
+lock master
+early numbering
+authorization master ( global, instance )
+
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) MeterReadingDocumentId;
+  field ( readonly ) MeterReadingStatusText;
+  determination SetStatus on save { create; update; }
+  mapping for zdmo_mr_docs
+  {
+    MeterReadingDocumentId = mr_document_id;
+    Equipment = equipment;
+    MeterReadingDate = mr_date;
+    MeterReadingResult = mr_result;
+    MeterReadingUnit = mr_unit;
+    MeterReadingStatus = mr_status;
+    MeterReadingSource = mr_source;
+    CreatedByUser = ernam;
+    CreatedAtDate = erdat;
+    CreatedAtTime = erzet;
+    LastChangedByUser = aenam;
+    LastChangedAtDate = aedat;
+    LastChangedAtTime = aezet;
+  }
+}

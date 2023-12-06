@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZDMO_CONNECTION_OBJECT</ROLLNAME>
+    <DDLANGUAGE>D</DDLANGUAGE>
+    <DOMNAME>ZDMO_CONNECTION_OBJECT</DOMNAME>
+    <MEMORYID>IFL</MEMORYID>
+    <LOGFLAG>X</LOGFLAG>
+    <HEADLEN>30</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>15</SCRLEN2>
+    <SCRLEN3>20</SCRLEN3>
+    <DDTEXT>Technischer Platz</DDTEXT>
+    <REPTEXT>Technischer Platz</REPTEXT>
+    <SCRTEXT_S>TechnPlatz</SCRTEXT_S>
+    <SCRTEXT_M>Techn. Platz</SCRTEXT_M>
+    <SCRTEXT_L>Technischer Platz</SCRTEXT_L>
+    <APPLCLASS>INST</APPLCLASS>
+    <DTELMASTER>E</DTELMASTER>
+    <SHLPNAME>IFLM</SHLPNAME>
+    <SHLPFIELD>TPLNR</SHLPFIELD>
+    <DEFFDNAME>FUNCT_LOC</DEFFDNAME>
+    <REFKIND>D</REFKIND>
+   </DD04V>
+   <I18N_LANGS>
+    <LANGU>E</LANGU>
+   </I18N_LANGS>
+   <DD04_TEXTS>
+    <item>
+     <DDLANGUAGE>E</DDLANGUAGE>
+     <DDTEXT>Functional Location</DDTEXT>
+     <REPTEXT>Functional Location</REPTEXT>
+     <SCRTEXT_S>Func. Loc.</SCRTEXT_S>
+     <SCRTEXT_M>Functional loc.</SCRTEXT_M>
+     <SCRTEXT_L>Functional Location</SCRTEXT_L>
+    </item>
+   </DD04_TEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

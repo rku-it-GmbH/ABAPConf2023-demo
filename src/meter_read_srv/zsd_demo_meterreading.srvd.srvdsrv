@@ -1,0 +1,6 @@
+@EndUserText.label: 'ABAPConf 2023 Demo: Service Definition'
+define service ZSD_Demo_MeterReading {
+  expose ZC_Demo_Contracts as Contract;
+  expose ZC_Demo_MeterReadingDocuments as Document;
+  expose ZC_Demo_MeterReadingUpload as Upload;
+}

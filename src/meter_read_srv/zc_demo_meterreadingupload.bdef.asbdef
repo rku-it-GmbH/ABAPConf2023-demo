@@ -1,0 +1,10 @@
+projection;
+strict;
+
+define behavior for ZC_Demo_MeterReadingUpload alias Upload
+{
+  use create;
+  use update;
+  use delete;
+  use action ProcessMeterReading;
+}

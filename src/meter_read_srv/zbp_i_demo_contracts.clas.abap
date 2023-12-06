@@ -1,0 +1,5 @@
+CLASS zbp_i_demo_contracts DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_demo_contracts.
+ENDCLASS.
+
+CLASS zbp_i_demo_contracts IMPLEMENTATION.
+ENDCLASS.

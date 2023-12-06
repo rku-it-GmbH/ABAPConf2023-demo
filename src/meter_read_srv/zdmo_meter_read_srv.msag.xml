@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZDMO_METER_READ_SRV</ARBGB>
+    <MASTERLANG>D</MASTERLANG>
+    <STEXT>ABAPConf 2023 Demo: Nachrichtenklasse</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZDMO_METER_READ_SRV</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>Geschäftspartner &amp;1 nicht vorhanden.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZDMO_METER_READ_SRV</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Anschlussobjekt &amp;1 nicht vorhanden.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZDMO_METER_READ_SRV</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Vertragskonto &amp;1 nicht vorhanden.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZDMO_METER_READ_SRV</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Equipment &amp;1 nicht vorhanden.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZDMO_METER_READ_SRV</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Vertragszeitraum &amp;1 - &amp;2 nicht gültig.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZDMO_METER_READ_SRV</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Equipment &amp;1 ist nicht im ganzen Zeitraum &amp;2 - &amp;3 verfügbar.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZDMO_METER_READ_SRV</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Geschäftspartner nicht identifiziert.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZDMO_METER_READ_SRV</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Geschäftspartner nicht eindeutig identifiziert.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZDMO_METER_READ_SRV</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Anschlussobjekt nicht identifiziert.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZDMO_METER_READ_SRV</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Anschlussobjekt nicht eindeutig identifiziert.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZDMO_METER_READ_SRV</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Equipment nicht identifiziert.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZDMO_METER_READ_SRV</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Equipment nicht eindeutig identifiziert.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZDMO_METER_READ_SRV</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Ablesedaten sind nicht konsistent.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZDMO_METER_READ_SRV</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Ablesedaten sind nicht vollständig.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZDMO_METER_READ_SRV</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>Kein gültiger Vertrag für Equipment &amp;1 am &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>D</SPRSL>
+     <ARBGB>ZDMO_METER_READ_SRV</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Zählerstand für Equipment &amp;1 am &amp;2 bereits vorhanden.</TEXT>
+    </T100>
+   </T100>
+   <I18N_LANGS>
+    <LANGU>E</LANGU>
+   </I18N_LANGS>
+   <T100T>
+    <T100T>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZDMO_METER_READ_SRV</ARBGB>
+     <STEXT>ABAPConf 2023 Demo: Message class</STEXT>
+    </T100T>
+   </T100T>
+   <T100_TEXTS>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>000</MSGNR>
+     <TEXT>Business partner &amp;1 not available.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>001</MSGNR>
+     <TEXT>Connection object &amp;1 not available.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>002</MSGNR>
+     <TEXT>Contract account &amp;1 does not exist.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>003</MSGNR>
+     <TEXT>Equipment &amp;1 not available.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>004</MSGNR>
+     <TEXT>Contract period &amp;1 - &amp;2 not valid.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>005</MSGNR>
+     <TEXT>Equipment &amp;1 is not available in the entire period &amp;2 - &amp;3.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>006</MSGNR>
+     <TEXT>Business partner not identified.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>007</MSGNR>
+     <TEXT>Business partner not clearly identified.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>008</MSGNR>
+     <TEXT>Connection object not identified.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>009</MSGNR>
+     <TEXT>Connection object not clearly identified.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>010</MSGNR>
+     <TEXT>Equipment not identified.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>011</MSGNR>
+     <TEXT>Equipment not clearly identified.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>012</MSGNR>
+     <TEXT>Meter reading data is not consistent.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>013</MSGNR>
+     <TEXT>Meter reading data is not complete.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>014</MSGNR>
+     <TEXT>No valid contract for Equipment &amp;1 on &amp;2.</TEXT>
+    </item>
+    <item>
+     <SPRSL>E</SPRSL>
+     <MSGNR>015</MSGNR>
+     <TEXT>Meter Reading for Equipment &amp;1 on &amp;2 already exists.</TEXT>
+    </item>
+   </T100_TEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

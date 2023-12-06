@@ -1,0 +1,37 @@
+managed implementation in class zbp_i_demo_contracts unique;
+strict;
+
+define behavior for ZI_Demo_Contracts alias Contract
+persistent table zdmo_contracts
+lock master
+early numbering
+authorization master ( global, instance )
+
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) Contract;
+  validation ExistsBusinessPartner on save { create; update; }
+  validation ExistsContractAccount on save { create; update; }
+  validation ExistsConnectionObject on save { create; update; }
+  validation ExistsEquipment on save { create; update; }
+  validation IsDateIntervalValid on save { create; update; }
+  validation IsEquipmentAvailable on save { create; update; }
+  mapping for zdmo_contracts
+  {
+    Contract = contract;
+    ContractAccount = contract_account;
+    BusinessPartner = business_partner;
+    ConnectionObject = connection_object;
+    Equipment = equipment;
+    ContractStartDate = contract_start_date;
+    ContractEndDate = contract_end_date;
+    CreatedByUser = ernam;
+    CreatedAtDate = erdat;
+    CreatedAtTime = erzet;
+    LastChangedByUser = aenam;
+    LastChangedAtDate = aedat;
+    LastChangedAtTime = aezet;
+  }
+}
