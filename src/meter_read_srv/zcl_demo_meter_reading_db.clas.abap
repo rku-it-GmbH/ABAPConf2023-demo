@@ -9,12 +9,16 @@ CLASS zcl_demo_meter_reading_db DEFINITION PUBLIC FINAL CREATE PUBLIC.
 ENDCLASS.
 
 
-CLASS zcl_demo_meter_reading_db IMPLEMENTATION.
+
+CLASS ZCL_DEMO_METER_READING_DB IMPLEMENTATION.
+
+
   METHOD zif_demo_meter_reading_db~exists_business_partner.
     SELECT SINGLE @abap_true FROM but000
      WHERE partner = @i_business_partner
       INTO @r_exists.
   ENDMETHOD.
+
 
   METHOD zif_demo_meter_reading_db~exists_connection_object.
     SELECT SINGLE @abap_true FROM iflot
@@ -22,17 +26,20 @@ CLASS zcl_demo_meter_reading_db IMPLEMENTATION.
       INTO @r_exists.
   ENDMETHOD.
 
+
   METHOD zif_demo_meter_reading_db~exists_contract_account.
     SELECT SINGLE @abap_true FROM fkkvkp
      WHERE vkont = @i_contract_account
       INTO @r_exists.
   ENDMETHOD.
 
+
   METHOD zif_demo_meter_reading_db~exists_equipment.
     SELECT SINGLE @abap_true FROM equi
      WHERE equnr = @i_equipment
       INTO @r_exists.
   ENDMETHOD.
+
 
   METHOD zif_demo_meter_reading_db~is_date_interval_valid.
     IF i_date_from IS INITIAL OR i_date_to IS INITIAL.
@@ -68,6 +75,7 @@ CLASS zcl_demo_meter_reading_db IMPLEMENTATION.
     r_is_valid = abap_true.
   ENDMETHOD.
 
+
   METHOD zif_demo_meter_reading_db~is_equipment_available.
     SELECT contract, contract_start_date, contract_end_date
       FROM zdmo_contracts
@@ -79,6 +87,7 @@ CLASS zcl_demo_meter_reading_db IMPLEMENTATION.
 
     r_is_available = xsdbool( lines( overlapping_contracts ) = 0 ).
   ENDMETHOD.
+
 
   METHOD zif_demo_meter_reading_db~get_readings_for_equipment.
     IF is_date_interval_valid( i_date_from = i_date_from
@@ -94,5 +103,4 @@ CLASS zcl_demo_meter_reading_db IMPLEMENTATION.
         INTO CORRESPONDING FIELDS OF TABLE @r_meter_reading_documents.
     ENDIF.
   ENDMETHOD.
-
 ENDCLASS.

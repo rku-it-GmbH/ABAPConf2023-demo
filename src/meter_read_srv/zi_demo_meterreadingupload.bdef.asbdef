@@ -6,7 +6,7 @@ define behavior for ZI_Demo_MeterReadingUpload alias Upload
 persistent table zdmo_mr_upload
 lock master
 authorization master ( global, instance )
-etag master LastChangedAtTimestamp
+//etag master LastChangedAtTimestamp
 
 {
   create;
@@ -24,34 +24,36 @@ etag master LastChangedAtTimestamp
   determination IdentifyEquipment on modify { create; update; }
   determination SetStatus on modify { create; update; }
   action ( authorization : update ) ProcessMeterReading;
+  action ( authorization : update ) setRemark parameter ZA_Demo_RemarkInput result [1] $self;
 
   mapping for zdmo_mr_upload
-  {
-    MeterReadingUploadUUID = uuid;
-    MeterReadingDocumentId = mr_document_id;
-    ConnectionObject = connection_object;
-    Equipment = equipment;
-    SerialNumber = serial_number;
-    MeterReadingDate = mr_date;
-    MeterReadingResult = mr_result;
-    MeterReadingUnit = mr_unit;
-    MeterReadingSource = mr_source;
-    Contract = contract;
-    ContractAccount = contract_account;
-    BusinessPartner = business_partner;
-    FirstName = first_name;
-    LastName = last_name;
-    Street = street;
-    HouseNumber = house_number;
-    HouseNumberSupplement = house_number_supplement;
-    PostCode = post_code;
-    City = city;
-    UploadStatus = upload_status;
-    CreatedByUser = created_by_user;
-    CreatedAtTimestamp = created_at_timestamp;
-    LastChangedByUser = last_changed_by_user;
-    LastChangedAtTimestamp = last_changed_at_timestamp;
-    LocInstChangedByUser = loc_inst_changed_by_user;
-    LocInstChangedAtTimestamp = loc_inst_changed_at_timestamp;
-  }
+    {
+      MeterReadingUploadUUID    = uuid;
+      MeterReadingDocumentId    = mr_document_id;
+      ConnectionObject          = connection_object;
+      Equipment                 = equipment;
+      SerialNumber              = serial_number;
+      MeterReadingDate          = mr_date;
+      MeterReadingResult        = mr_result;
+      MeterReadingUnit          = mr_unit;
+      MeterReadingSource        = mr_source;
+      Contract                  = contract;
+      ContractAccount           = contract_account;
+      BusinessPartner           = business_partner;
+      FirstName                 = first_name;
+      LastName                  = last_name;
+      Street                    = street;
+      HouseNumber               = house_number;
+      HouseNumberSupplement     = house_number_supplement;
+      PostCode                  = post_code;
+      City                      = city;
+      Remark                    = remark;
+      UploadStatus              = upload_status;
+      CreatedByUser             = created_by_user;
+      CreatedAtTimestamp        = created_at_timestamp;
+      LastChangedByUser         = last_changed_by_user;
+      LastChangedAtTimestamp    = last_changed_at_timestamp;
+      LocInstChangedByUser      = loc_inst_changed_by_user;
+      LocInstChangedAtTimestamp = loc_inst_changed_at_timestamp;
+    }
 }

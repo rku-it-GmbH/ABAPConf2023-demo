@@ -31,7 +31,9 @@ ENDCLASS.
 
 
 
-CLASS zcx_rap_exception IMPLEMENTATION.
+CLASS ZCX_RAP_EXCEPTION IMPLEMENTATION.
+
+
   METHOD constructor ##ADT_SUPPRESS_GENERATION.
     super->constructor( previous = previous ).
     me->bapi_return_table = bapi_return_table.
@@ -45,6 +47,7 @@ CLASS zcx_rap_exception IMPLEMENTATION.
 
     severity = set_severity( ).
   ENDMETHOD.
+
 
   METHOD convert_to_bapi_return.
     IF bapi_return_table IS NOT INITIAL.
@@ -60,6 +63,7 @@ CLASS zcx_rap_exception IMPLEMENTATION.
         message_v4 = msgv4 ) ).
     ENDIF.
   ENDMETHOD.
+
 
   METHOD set_severity.
     r_severity = SWITCH #( msgty

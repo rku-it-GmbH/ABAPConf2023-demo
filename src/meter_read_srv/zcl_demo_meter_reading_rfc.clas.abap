@@ -15,10 +15,13 @@ ENDCLASS.
 
 
 
-CLASS zcl_demo_meter_reading_rfc IMPLEMENTATION.
+CLASS ZCL_DEMO_METER_READING_RFC IMPLEMENTATION.
+
+
   METHOD constructor.
     utility = NEW zcl_rap_utility( ).
   ENDMETHOD.
+
 
   METHOD zif_demo_meter_reading_rfc~upload_meter_reading_mass.
     DATA bapi_return_table TYPE bapirettab.
@@ -36,6 +39,7 @@ CLASS zcl_demo_meter_reading_rfc IMPLEMENTATION.
       RAISE EXCEPTION NEW zcx_rap_exception( bapi_return_table = bapi_return_table ).
     ENDIF.
   ENDMETHOD.
+
 
   METHOD upload_meter_reading.
     DATA(create_upload_table) = VALUE zif_demo_meter_reading_types=>create_upload_table( ( i_meter_reading_upload ) ).
@@ -63,5 +67,4 @@ CLASS zcl_demo_meter_reading_rfc IMPLEMENTATION.
       RAISE EXCEPTION NEW zcx_rap_exception( bapi_return_table = utility->convert_reported_to_bapireturn( commit_reported ) ).
     ENDIF.
   ENDMETHOD.
-
 ENDCLASS.

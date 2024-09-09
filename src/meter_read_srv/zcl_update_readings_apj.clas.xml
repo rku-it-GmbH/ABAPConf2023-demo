@@ -3,20 +3,14 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZCL_DEMO_METER_READING_DB</CLSNAME>
+    <CLSNAME>ZCL_UPDATE_READINGS_APJ</CLSNAME>
     <LANGU>D</LANGU>
-    <DESCRIPT>ABAPConf 2023 Demo: Datenbankzugriffe</DESCRIPT>
+    <DESCRIPT>Anwendungsjob: Zählerstände verbuchen</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
     <UNICODE>X</UNICODE>
    </VSEOCLASS>
-   <DESCRIPTIONS_CLASS>
-    <SEOCLASSTX>
-     <LANGU>E</LANGU>
-     <DESCRIPT>ABAPConf 2023 Demo: Database access</DESCRIPT>
-    </SEOCLASSTX>
-   </DESCRIPTIONS_CLASS>
   </asx:values>
  </asx:abap>
 </abapGit>

@@ -24,13 +24,17 @@ CLASS lhc_Upload DEFINITION INHERITING FROM cl_abap_behavior_handler.
     METHODS identify_equipment FOR DETERMINE ON MODIFY
       IMPORTING keys FOR Upload~IdentifyEquipment.
 
-    METHODS process_meter_reading FOR MODIFY
-      IMPORTING keys FOR ACTION Upload~ProcessMeterReading.
     METHODS identify_contract FOR DETERMINE ON MODIFY
       IMPORTING keys FOR Upload~IdentifyContract.
+
     METHODS set_status FOR DETERMINE ON MODIFY
       IMPORTING keys FOR Upload~SetStatus.
 
+    METHODS process_meter_reading FOR MODIFY
+      IMPORTING keys FOR ACTION Upload~ProcessMeterReading.
+
+    METHODS set_remark FOR MODIFY
+      IMPORTING keys FOR ACTION Upload~setRemark RESULT result.
 ENDCLASS.
 
 CLASS lhc_Upload IMPLEMENTATION.
@@ -408,7 +412,7 @@ CLASS lhc_Upload IMPLEMENTATION.
     ENDLOOP.
   ENDMETHOD.
 
-    METHOD set_status.
+  METHOD set_status.
     initialize( ).
 
     " read data from buffer
@@ -478,8 +482,8 @@ CLASS lhc_Upload IMPLEMENTATION.
         FOR key IN keys
         ( %key-MeterReadingUploadUUID = key-MeterReadingUploadUUID
           %control                    = VALUE #(
-              MeterReadingUploadUUID = if_abap_behv=>mk-on
-              MeterReadingDocumentId = if_abap_behv=>mk-on                                            ) ) )
+              MeterReadingUploadUUID  = if_abap_behv=>mk-on
+              MeterReadingDocumentId  = if_abap_behv=>mk-on ) ) )
          RESULT uploads
          REPORTED DATA(read_reported).
 
@@ -506,6 +510,54 @@ CLASS lhc_Upload IMPLEMENTATION.
           INSERT CORRESPONDING #( upload ) INTO TABLE reported-upload ASSIGNING FIELD-SYMBOL(<reported_upload>).
           <reported_upload>-%msg = exception.
       ENDTRY.
+    ENDLOOP.
+  ENDMETHOD.
+
+  METHOD set_remark.
+    initialize( ).
+
+    " read data from buffer
+    DATA uploads TYPE zif_demo_meter_reading_types=>read_upload_table.
+    READ ENTITY IN LOCAL MODE zi_demo_meterreadingupload FROM VALUE #(
+        FOR x_key IN keys
+        ( %key-MeterReadingUploadUUID = x_key-MeterReadingUploadUUID
+          %control                    = VALUE #(
+              MeterReadingUploadUUID  = if_abap_behv=>mk-on
+              MeterReadingDocumentId  = if_abap_behv=>mk-on ) ) )
+         RESULT uploads
+         REPORTED DATA(read_reported).
+
+    " propagate messages
+    LOOP AT read_reported-upload INTO DATA(read_reported_upload).
+      INSERT CORRESPONDING #( read_reported_upload ) INTO TABLE reported-upload.
+    ENDLOOP.
+
+    DATA(update_uploads) = VALUE zif_demo_meter_reading_types=>update_upload_table( ).
+    LOOP AT uploads INTO DATA(upload).
+      DATA(key) = keys[ KEY entity %tky = upload-%tky ].
+
+      " Determine Status and add entry to update table (happy path)
+      DATA(update_upload) = CORRESPONDING zif_demo_meter_reading_types=>update_upload( upload ).
+
+      IF upload-Remark <> key-%param-Remark.
+        update_upload-Remark = key-%param-Remark.
+        update_upload-%control-Remark = if_abap_behv=>mk-on.
+        INSERT update_upload INTO TABLE update_uploads.
+      ENDIF.
+
+      INSERT VALUE #( %cid_ref = key-%cid_ref
+                      %key     = CORRESPONDING #( key    )
+                      %param   = CORRESPONDING #( upload ) ) INTO TABLE result.
+    ENDLOOP.
+
+    " modify buffer
+    MODIFY ENTITY IN LOCAL MODE zi_demo_meterreadingupload
+           UPDATE FROM update_uploads
+           REPORTED DATA(update_reported).
+
+    " propagate messages
+    LOOP AT update_reported-upload INTO DATA(update_reported_upload).
+      INSERT CORRESPONDING #( update_reported_upload ) INTO TABLE reported-upload.
     ENDLOOP.
   ENDMETHOD.
 

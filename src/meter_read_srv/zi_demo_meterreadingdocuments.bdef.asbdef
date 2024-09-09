@@ -16,19 +16,20 @@ authorization master ( global, instance )
   field ( readonly ) MeterReadingStatusText;
   determination SetStatus on save { create; update; }
   mapping for zdmo_mr_docs
-  {
-    MeterReadingDocumentId = mr_document_id;
-    Equipment = equipment;
-    MeterReadingDate = mr_date;
-    MeterReadingResult = mr_result;
-    MeterReadingUnit = mr_unit;
-    MeterReadingStatus = mr_status;
-    MeterReadingSource = mr_source;
-    CreatedByUser = ernam;
-    CreatedAtDate = erdat;
-    CreatedAtTime = erzet;
-    LastChangedByUser = aenam;
-    LastChangedAtDate = aedat;
-    LastChangedAtTime = aezet;
-  }
+    {
+      MeterReadingDocumentId = mr_document_id;
+      Equipment              = equipment;
+      MeterReadingDate       = mr_date;
+      MeterReadingResult     = mr_result;
+      MeterReadingUnit       = mr_unit;
+      MeterReadingStatus     = mr_status;
+      MeterReadingSource     = mr_source;
+      Remark                 = remark;
+      CreatedByUser          = ernam;
+      CreatedAtDate          = erdat;
+      CreatedAtTime          = erzet;
+      LastChangedByUser      = aenam;
+      LastChangedAtDate      = aedat;
+      LastChangedAtTime      = aezet;
+    }
 }

@@ -19,43 +19,54 @@ define root view entity ZC_Demo_Contracts
                     parentId: 'overview',
                     position: 10 }]
 
-      @UI.lineItem: [{ position: 10 }]
+      @Consumption.filter.selectionType: #RANGE
+      @UI.lineItem:       [{ position: 10 }]
       @UI.identification: [{ position: 10 }]
   key Contract,
-      @UI.lineItem: [{ position: 20 }]
-      @UI.identification: [{ position: 20 }]
+      @Consumption.filter.selectionType: #RANGE
+      @UI.lineItem:       [{ position: 20, type: #WITH_INTENT_BASED_NAVIGATION, semanticObject: 'ContractAccount', semanticObjectAction: 'Display' }]
+      @UI.identification: [{ position: 20, type: #WITH_INTENT_BASED_NAVIGATION, semanticObject: 'ContractAccount', semanticObjectAction: 'Display' }]
       ContractAccount,
-      @UI.lineItem: [{ position: 30 }]
-      @UI.identification: [{ position: 30 }]
+      @Consumption.filter.selectionType: #RANGE
+      @UI.lineItem:       [{ position: 30, type: #WITH_INTENT_BASED_NAVIGATION, semanticObject: 'BusinessPartner', semanticObjectAction: 'Display' }]
+      @UI.identification: [{ position: 30, type: #WITH_INTENT_BASED_NAVIGATION, semanticObject: 'BusinessPartner', semanticObjectAction: 'Display' }]
       BusinessPartner,
-      @UI.lineItem: [{ position: 40 }]
-      @UI.identification: [{ position: 40 }]
+      @Consumption.filter.selectionType: #RANGE
+      @UI.lineItem:       [{ position: 40, type: #WITH_INTENT_BASED_NAVIGATION, semanticObject: 'ConnectionObject', semanticObjectAction: 'Display' }]
+      @UI.identification: [{ position: 40, type: #WITH_INTENT_BASED_NAVIGATION, semanticObject: 'ConnectionObject', semanticObjectAction: 'Display' }]
       ConnectionObject,
-      @UI.lineItem: [{ position: 50 }]
-      @UI.identification: [{ position: 50 }]
+      @Consumption.filter.selectionType: #RANGE
+      @UI.lineItem:       [{ position: 50, type: #WITH_INTENT_BASED_NAVIGATION, semanticObject: 'Equipment', semanticObjectAction: 'Display' }]
+      @UI.identification: [{ position: 50, type: #WITH_INTENT_BASED_NAVIGATION, semanticObject: 'Equipment', semanticObjectAction: 'Display' }]
       Equipment,
-      @UI.lineItem: [{ position: 60 }]
+      @Consumption.filter.selectionType: #RANGE
+      @UI.lineItem:       [{ position: 60 }]
       @UI.identification: [{ position: 60 }]
       ContractStartDate,
-      @UI.lineItem: [{ position: 70 }]
+      @Consumption.filter.selectionType: #RANGE
+      @UI.lineItem:       [{ position: 70 }]
       @UI.identification: [{ position: 70 }]
       ContractEndDate,
-      @UI.lineItem: [{ position: 80 }]
+      @Consumption.filter.selectionType: #RANGE
+      @UI.lineItem:       [{ position: 80 }]
       @UI.identification: [{ position: 80 }]
       CreatedByUser,
-      @UI.lineItem: [{ position: 90 }]
+      @Consumption.filter.selectionType: #RANGE
+      @UI.lineItem:       [{ position: 90 }]
       @UI.identification: [{ position: 90 }]
       CreatedAtDate,
-      @UI.lineItem: [{ position: 100 }]
+      @UI.lineItem:       [{ position: 100 }]
       @UI.identification: [{ position: 100 }]
       CreatedAtTime,
-      @UI.lineItem: [{ position: 110 }]
+      @Consumption.filter.selectionType: #RANGE
+      @UI.lineItem:       [{ position: 110 }]
       @UI.identification: [{ position: 110 }]
       LastChangedByUser,
-      @UI.lineItem: [{ position: 120 }]
+      @Consumption.filter.selectionType: #RANGE
+      @UI.lineItem:       [{ position: 120 }]
       @UI.identification: [{ position: 120 }]
       LastChangedAtDate,
-      @UI.lineItem: [{ position: 130 }]
+      @UI.lineItem:       [{ position: 130 }]
       @UI.identification: [{ position: 130 }]
       LastChangedAtTime,
       // Associations

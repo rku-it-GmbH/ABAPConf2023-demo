@@ -1,5 +1,7 @@
 CLASS zbp_i_demo_meterreadingupload DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_demo_meterreadingupload.
 ENDCLASS.
 
-CLASS zbp_i_demo_meterreadingupload IMPLEMENTATION.
+
+
+CLASS ZBP_I_DEMO_METERREADINGUPLOAD IMPLEMENTATION.
 ENDCLASS.

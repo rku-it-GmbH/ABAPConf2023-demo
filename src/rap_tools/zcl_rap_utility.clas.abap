@@ -25,7 +25,10 @@ CLASS zcl_rap_utility DEFINITION PUBLIC FINAL CREATE PUBLIC.
 ENDCLASS.
 
 
-CLASS zcl_rap_utility IMPLEMENTATION.
+
+CLASS ZCL_RAP_UTILITY IMPLEMENTATION.
+
+
   METHOD zif_rap_utility~get_mappings_for_behaviour.
     load_behaviour_definition(
       EXPORTING
@@ -33,6 +36,7 @@ CLASS zcl_rap_utility IMPLEMENTATION.
       IMPORTING
         e_cds_mapping_table    = r_cds_mapping_table ).
   ENDMETHOD.
+
 
   METHOD zif_rap_utility~get_mapping_for_cds_entity.
     load_behaviour_definition(
@@ -44,6 +48,7 @@ CLASS zcl_rap_utility IMPLEMENTATION.
     r_cds_mapping = cds_mapping_table[ cds_entity = to_upper( i_cds_entity ) ].
   ENDMETHOD.
 
+
   METHOD get_read_only_fields.
     load_behaviour_definition(
       EXPORTING
@@ -54,6 +59,7 @@ CLASS zcl_rap_utility IMPLEMENTATION.
 
     DELETE r_read_only_fields WHERE entity_name <> to_upper( i_cds_entity ).
   ENDMETHOD.
+
 
   METHOD load_behaviour_definition.
     " Load Behavior Definition as in CL_API_EXTRACTOR_BDEF, LCL_BDEF
@@ -177,6 +183,7 @@ CLASS zcl_rap_utility IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD zif_rap_utility~map_cds_entity_to_db_table.
     DATA(cds_mapping) = get_mapping_for_cds_entity( i_behaviour_definition = i_behaviour_definition
                                                     i_cds_entity           = i_cds_entity ).
@@ -196,6 +203,7 @@ CLASS zcl_rap_utility IMPLEMENTATION.
       ENDLOOP.
     ENDLOOP.
   ENDMETHOD.
+
 
   METHOD zif_rap_utility~map_db_table_to_cds_entity.
     DATA(cds_mapping) = get_mapping_for_cds_entity( i_behaviour_definition = i_behaviour_definition
@@ -238,6 +246,7 @@ CLASS zcl_rap_utility IMPLEMENTATION.
     ENDLOOP.
   ENDMETHOD.
 
+
   METHOD zif_rap_utility~convert_reported_to_bapireturn.
     TYPES message_table TYPE STANDARD TABLE OF REF TO if_abap_behv_message.
     FIELD-SYMBOLS <other>   TYPE message_table.
@@ -264,6 +273,7 @@ CLASS zcl_rap_utility IMPLEMENTATION.
     ENDLOOP.
   ENDMETHOD.
 
+
   METHOD zif_rap_utility~convert_message_to_bapireturn.
     r_bapi_return = VALUE #(
       id         = i_message->if_t100_message~t100key-msgid
@@ -283,6 +293,7 @@ CLASS zcl_rap_utility IMPLEMENTATION.
         WHEN if_abap_behv_message=>severity-error       THEN 'E' ).
     ENDIF.
   ENDMETHOD.
+
 
   METHOD zif_rap_utility~check_authority.
     IF     i_association_name IS SUPPLIED
@@ -330,5 +341,4 @@ CLASS zcl_rap_utility IMPLEMENTATION.
       RAISE EXCEPTION NEW zcx_rap_exception( ).
     ENDIF.
   ENDMETHOD.
-
 ENDCLASS.

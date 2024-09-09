@@ -2,9 +2,7 @@
 "BASEINFO":
 {
 "FROM":
-[
-"ZI_DEMO_METERREADINGUPLOAD"
-],
+[],
 "ASSOCIATED":
 [],
 "BASE":

@@ -15,6 +15,7 @@ define root view entity ZI_Demo_MeterReadingDocuments
       mr_status                      as MeterReadingStatus,
       _Status.MeterReadingStatusText as MeterReadingStatusText,
       mr_source                      as MeterReadingSource,
+      remark                         as Remark,
       @Semantics.user.createdBy: true
       ernam                          as CreatedByUser,
       @Semantics.systemDate.createdAt: true

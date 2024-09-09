@@ -7,4 +7,5 @@ define behavior for ZC_Demo_MeterReadingUpload alias Upload
   use update;
   use delete;
   use action ProcessMeterReading;
+  use action setRemark;
 }

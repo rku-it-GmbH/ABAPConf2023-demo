@@ -32,6 +32,7 @@ define root view entity ZI_Demo_MeterReadingUpload
       post_code                     as PostCode,
       @Semantics.address.city: true
       city                          as City,
+      remark                        as Remark,
       upload_status                 as UploadStatus,
       case upload_status
         when 'E' then '1'

@@ -21,21 +21,26 @@ define root view entity ZC_Demo_MeterReadingUpload
                     position: 10 }]
 
       @UI.hidden: true
-      @UI.lineItem:       [{ type: #FOR_ACTION, dataAction: 'ProcessMeterReading', label: 'Verbuchen' }]
-      @UI.identification: [{ type: #FOR_ACTION, dataAction: 'ProcessMeterReading', label: 'Verbuchen' }]
+//      @UI.lineItem:       [{ type: #FOR_ACTION, dataAction: 'ProcessMeterReading', label: 'Verbuchen' }]
+//      @UI.identification: [{ type: #FOR_ACTION, dataAction: 'ProcessMeterReading', label: 'Verbuchen' }]
   key MeterReadingUploadUUID,
+      @Consumption.filter.selectionType: #RANGE
       @UI.lineItem:       [{ position: 10 }]
       @UI.identification: [{ position: 10 }]
       MeterReadingDocumentId,
-      @UI.lineItem:       [{ position: 110 }]
-      @UI.identification: [{ position: 110 }]
+      @Consumption.filter.selectionType: #RANGE
+      @UI.lineItem:       [{ position: 110 }] //, type: #WITH_INTENT_BASED_NAVIGATION, semanticObject: 'ConnectionObject', semanticObjectAction: 'Display' }]
+      @UI.identification: [{ position: 110 }] //, type: #WITH_INTENT_BASED_NAVIGATION, semanticObject: 'ConnectionObject', semanticObjectAction: 'Display' }]
       ConnectionObject,
-      @UI.lineItem:       [{ position: 100 }]
-      @UI.identification: [{ position: 100 }]
+      @Consumption.filter.selectionType: #RANGE
+      @UI.lineItem:       [{ position: 100 }] //, type: #WITH_INTENT_BASED_NAVIGATION, semanticObject: 'Equipment', semanticObjectAction: 'Display' }]
+      @UI.identification: [{ position: 100 }] //, type: #WITH_INTENT_BASED_NAVIGATION, semanticObject: 'Equipment', semanticObjectAction: 'Display' }]
       Equipment,
-      @UI.lineItem:       [{ position: 50 }]
-      @UI.identification: [{ position: 50 }]
+      @Consumption.filter.selectionType: #RANGE
+      @UI.lineItem:       [{ position: 50 }] //, type: #WITH_INTENT_BASED_NAVIGATION, semanticObject: 'Device', semanticObjectAction: 'Display' }]
+      @UI.identification: [{ position: 50 }] //, type: #WITH_INTENT_BASED_NAVIGATION, semanticObject: 'Device', semanticObjectAction: 'Display' }]
       SerialNumber,
+      @Consumption.filter.selectionType: #RANGE
       @UI.lineItem:       [{ position: 60 }]
       @UI.identification: [{ position: 60 }]
       MeterReadingDate,
@@ -45,17 +50,21 @@ define root view entity ZC_Demo_MeterReadingUpload
       @UI.lineItem:       [{ position: 80 }]
       @UI.identification: [{ position: 80 }]
       MeterReadingUnit,
+      @Consumption.filter.selectionType: #RANGE
       @UI.lineItem:       [{ position: 90 }]
       @UI.identification: [{ position: 90 }]
       MeterReadingSource,
+      @Consumption.filter.selectionType: #RANGE
       @UI.lineItem:       [{ position: 20 }]
       @UI.identification: [{ position: 20 }]
       Contract,
-      @UI.lineItem:       [{ position: 30 }]
-      @UI.identification: [{ position: 30 }]
+      @Consumption.filter.selectionType: #RANGE
+      @UI.lineItem:       [{ position: 30 }] //, type: #WITH_INTENT_BASED_NAVIGATION, semanticObject: 'ContractAccount', semanticObjectAction: 'Display' }]
+      @UI.identification: [{ position: 30 }] //, type: #WITH_INTENT_BASED_NAVIGATION, semanticObject: 'ContractAccount', semanticObjectAction: 'Display' }]
       ContractAccount,
-      @UI.lineItem:       [{ position: 40 }]
-      @UI.identification: [{ position: 40 }]
+      @Consumption.filter.selectionType: #RANGE
+      @UI.lineItem:       [{ position: 40 }] //, type: #WITH_INTENT_BASED_NAVIGATION, semanticObject: 'BusinessPartner', semanticObjectAction: 'Display' }]
+      @UI.identification: [{ position: 40 }] //, type: #WITH_INTENT_BASED_NAVIGATION, semanticObject: 'BusinessPartner', semanticObjectAction: 'Display' }]
       BusinessPartner,
       @UI.lineItem:       [{ position: 120 }]
       @UI.identification: [{ position: 120 }]
@@ -78,24 +87,32 @@ define root view entity ZC_Demo_MeterReadingUpload
       @UI.lineItem:       [{ position: 180 }]
       @UI.identification: [{ position: 180 }]
       City,
+      @UI.lineItem:       [{ position: 190 }, { type: #FOR_ACTION, dataAction: 'setRemark',label: 'Bemerkung erfassen' }]
+      @UI.identification: [{ position: 190 }, { type: #FOR_ACTION, dataAction: 'setRemark',label: 'Bemerkung erfassen' }]
+      Remark,
+      @Consumption.filter.selectionType: #RANGE
       @UI.hidden: true
       UploadStatus,
-      @UI.lineItem:       [{ position: 190, criticality: 'UploadStatusCriticality', criticalityRepresentation: #WITH_ICON }]
-      @UI.identification: [{ position: 190, criticality: 'UploadStatusCriticality', criticalityRepresentation: #WITH_ICON }]
+      @UI.lineItem:       [{ position: 200, criticality: 'UploadStatusCriticality', criticalityRepresentation: #WITH_ICON }]
+      @UI.identification: [{ position: 200, criticality: 'UploadStatusCriticality', criticalityRepresentation: #WITH_ICON }]
       UploadStatusText,
       @UI.hidden: true
       UploadStatusCriticality,
-      @UI.lineItem:       [{ position: 200 }]
-      @UI.identification: [{ position: 200 }]
-      CreatedByUser,
+      @Consumption.filter.selectionType: #RANGE
       @UI.lineItem:       [{ position: 210 }]
       @UI.identification: [{ position: 210 }]
-      CreatedAtTimestamp,
+      CreatedByUser,
+      @Consumption.filter.selectionType: #RANGE
       @UI.lineItem:       [{ position: 220 }]
       @UI.identification: [{ position: 220 }]
-      LastChangedByUser,
+      CreatedAtTimestamp,
+      @Consumption.filter.selectionType: #RANGE
       @UI.lineItem:       [{ position: 230 }]
       @UI.identification: [{ position: 230 }]
+      LastChangedByUser,
+      @Consumption.filter.selectionType: #RANGE
+      @UI.lineItem:       [{ position: 240 }]
+      @UI.identification: [{ position: 240 }]
       LastChangedAtTimestamp,
       @UI.hidden: true
       LocInstChangedByUser,
